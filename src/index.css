@@ -1,0 +1,50 @@
+@import "tailwindcss";
+
+@theme {
+  --font-display: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  
+  --color-bauhaus-red: #E63946;
+  --color-bauhaus-blue: #1D3557;
+  --color-bauhaus-yellow: #FFB703;
+  --color-bauhaus-black: #1A1A1A;
+  --color-bauhaus-white: #F1FAEE;
+}
+
+@layer base {
+  body {
+    @apply font-sans;
+  }
+}
+
+@layer utilities {
+  .bauhaus-grid {
+    background-image: 
+      linear-gradient(var(--bauhaus-black) 1px, transparent 1px),
+      linear-gradient(90deg, var(--bauhaus-black) 1px, transparent 1px);
+    background-size: 40px 40px;
+  }
+
+  .custom-scrollbar::-webkit-scrollbar {
+    width: 12px;
+  }
+
+  .custom-scrollbar::-webkit-scrollbar-track {
+    background: var(--bauhaus-white);
+    border-left: 4px solid var(--bauhaus-black);
+  }
+
+  .custom-scrollbar::-webkit-scrollbar-thumb {
+    background: var(--bauhaus-black);
+    border: 2px solid var(--bauhaus-white);
+  }
+
+  .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+    background: var(--bauhaus-red);
+  }
+
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+}
+

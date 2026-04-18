@@ -1,0 +1,192 @@
+import { Theme, Quote, Charity, Track, SunoTrack, TikTokTrack, InstagramTrack } from './types';
+
+export const themes: Theme[] = [
+  {
+    name: 'Classic Bauhaus',
+    type: 'light',
+    bg: '#F1FAEE',
+    text: '#1A1A1A',
+    red: '#E63946',
+    blue: '#1D3557',
+    yellow: '#FFB703',
+    black: '#1A1A1A',
+    white: '#F1FAEE',
+    hideControls: false
+  },
+  {
+    name: 'Bauhaus Night',
+    type: 'dark',
+    bg: '#1A1A1A',
+    text: '#F1FAEE',
+    red: '#E63946',
+    blue: '#457B9D',
+    yellow: '#FFB703',
+    black: '#000000',
+    white: '#FFFFFF',
+    hideControls: false
+  },
+  {
+    name: 'Desert Bauhaus',
+    type: 'light',
+    bg: '#F4E1D2',
+    text: '#3D2B1F',
+    red: '#D9534F',
+    blue: '#5BC0DE',
+    yellow: '#F0AD4E',
+    black: '#3D2B1F',
+    white: '#F4E1D2',
+    hideControls: false
+  },
+  {
+    name: 'Midnight Bauhaus',
+    type: 'dark',
+    bg: '#0B132B',
+    text: '#6FFFE9',
+    red: '#FF0054',
+    blue: '#3A506B',
+    yellow: '#FFBD00',
+    black: '#050814',
+    white: '#6FFFE9',
+    hideControls: false
+  },
+  {
+    name: 'Concrete Bauhaus',
+    type: 'light',
+    bg: '#E0E0E0',
+    text: '#212121',
+    red: '#C62828',
+    blue: '#1565C0',
+    yellow: '#F9A825',
+    black: '#212121',
+    white: '#E0E0E0',
+    hideControls: false
+  },
+  {
+    name: 'Onyx Bauhaus',
+    type: 'dark',
+    bg: '#121212',
+    text: '#FFFFFF',
+    red: '#FF5252',
+    blue: '#448AFF',
+    yellow: '#FFD740',
+    black: '#000000',
+    white: '#FFFFFF',
+    hideControls: false
+  }
+];
+
+export const quotes: Quote[] = [
+  { text: `The people being ignored by the opposition in their — Socialist — Autocratic — Centralized federal — States' rights rhetorical — Mess.`, source: `[CAM & ASH - Act 1, Scene 7]` },
+  { text: `He's not like us the way I thought.`, source: `[Geoff - Act 1, scene 8]` },
+  { text: `I wasn’t protecting you, sir. I was protecting people from you.`, source: `[Officer Watson - Act 1, Scene 9]` },
+  { text: `First of all, she’s very talented. Very talented. Second — we need more women in positions like this. We really do. I looked around the room the other day and I said, “Where are the women  lawyers?” And somebody said, “Well, sir, we have Tammy.” And I said, “Good. Let’s get Tammy up here.” But in all seriousness, she’s earned it.`, source: `[Ronnie - Act 1, Scene 12]` },
+  { text: `I don't spiral. I orbit.`, source: `[Geoff - Act 1, Scene 12]` },
+  { text: `You won't quit, Maxie. You'll smoke twice as much and your skin will wrinkle from all the stress.`, source: `[Geoff - Act 1, Scene 6]` },
+  { text: `I didn't disappear. I got kidnapped by the Department of Justice.`, source: `[Lila - Act 1, Scene 3]` },
+  { text: `Something will happen.`, source: `[Geoff - Act 1, Scene 12]` },
+  { text: `"I like you." "You don't know me." "I know enough." "That's what the judge said."`, source: `[Geoff & Guess - Act 1, Scene 2]` },
+  { text: `"Tell me which one are you, friend — the carpet or the bug?" "I'm the bug who ate the carpet then threw up on the rug, lost the job, then lost the wife, then found the bottom of the jug."`, source: `[Geoff & Guess - Act 1, Scene 2]` },
+  { text: `I choose to remember the man who saved me, not the monster I suspect you might be.`, source: `[Geoff & Guess - Act 1, Scene 1]` },
+  { text: `I didn't touch - I didn't go - I didn't - that's not the point. She wasn't real but the moment was. And I know that matters.`, source: `[Gus - Act 2, Scene 9]` },
+  { text: `My situation is that woman.`, source: `[Ronnie - Act 2, Scene 13]` },
+  { text: `I have not given my signature to any document that is documentable to allow the transfer of the case and its context from SDNY. They, per the documented documents, retain jurisdiction. I am granting the contextually appropriate and legally required time to complete their investigation due to new evidence. My office will receive the case formally when they present a contextually and properly documented document, procedurally consistent with any signature a signatory might sign by design. But until a signed documented with documentable and contextually and legally appropriate signature is presented and reviewed - in context - and with proper documents and or the signatory present to validate that the signature was properly affixed to require documents of transfer, then any future document you or I consider will lack sufficient documentation to affix any signature of our respective offices — or their Director's. Or, would the DOJ or the FBI care to arrest on new charges Mr. Gus here, or are you here to take the case formally?`, source: `[Tammy - Act 2, Scene 14]` },
+  { text: `Excuse me. The coffee cart doesn't have enough booze on it. I know it's early but — Your outfit makes me want to start drinking something.`, source: `[Maxie - Act 1, Scene 8]` },
+  { text: `I have read every file. I have sat with every allegation. And I am not satisfied. It would fly in the face of justice — It would fly in the face of this office — It would fly in the face of every word written down, ratified, and signed — to look at what these people have carried and say: not today.`, source: `[Tammy - Act 2, Scene 14]` },
+  { text: `A Southern social climber — very impressive. Unmarried, I notice. I mean — unpartnered. I mean — a strong, independent woman, high-profile role, no children — I'm assuming you're probably a les — I don't have any problem with the LGBT — D — I — X —  — whatever they're calling themselves this year. More letters every time I turn around. I think we should just call them all gay. I mean, they are gay, right? It's better than calling anyone a dy —`, source: `[Ronnie - Act 2, Scene 8]` }
+];
+
+export const charities: Charity[] = [
+  { name: "RAINN", url: "https://donate.rainn.org", msg: "Rape, Abuse & Incest National Network" },
+  { name: "Polaris Project", url: "https://polarisproject.org/donate", msg: "Working to end human trafficking" },
+  { name: "Intl. Justice Mission", url: "https://www.ijm.org/give", msg: "Protecting people from violence" },
+  { name: "PACT", url: "https://www.wearepact.org/donate", msg: "Protecting children from exploitation" },
+  { name: "Joyful Heart", url: "https://www.joyfulheartfoundation.org/donate", msg: "Healing and justice for survivors" }
+];
+
+export const youtubeTracks: Track[] = [
+  { id: 'Act1-Intro', act: 'Act 1', scene: 'Intro', title: 'Allegedly', versions: { '1.0': 'ETAlIfgJZKY' } },
+  { id: 'Act1-Scene1', act: 'Act 1', scene: 'Scene 1', title: 'Sweetheart Deal', versions: { '1.0': 'ysue5dEzxjI' } },
+  { id: 'Act1-Scene2', act: 'Act 1', scene: 'Scene 2', title: 'Who Was That (PrePrise 1)', versions: { '1.0': '_lhwSoj4ilk' } },
+  { id: 'Act1-Scene3', act: 'Act 1', scene: 'Scene 3', title: 'They Were Only Boys', versions: { '1.0': 'BThrcKexGvA', '2.0': 'KMlSbNJIEgI', '2.01': 'Ktey6JsAyP4' } },
+  { id: 'Act1-Scene4', act: 'Act 1', scene: 'Scene 4', title: 'Reasonable Man', versions: { '1.0': 'Qg-SA255BA4' } },
+  { id: 'Act1-Scene5', act: 'Act 1', scene: 'Scene 5', title: 'Questions & Answers', versions: { '1.0': 'RcVaEHwWUyo' } },
+  { id: 'Act1-Scene6', act: 'Act 1', scene: 'Scene 6', title: 'Little Secrets', versions: { '1.0': '8yOpukgj600' } },
+  { id: 'Act1-Scene7', act: 'Act 1', scene: 'Scene 7', title: "Welcome to Lil'Elmo", versions: { '1.0': 'zT0aXnfWyIM' } },
+  { id: 'Act1-Scene11', act: 'Act 1', scene: 'Scene 11', title: 'I Know What Happened on That Island', versions: { '1.0': 'wnLDgj_xywo' } },
+  { id: 'Act1-Scene12', act: 'Act 1', scene: 'Scene 12', title: 'Who Was That Part 2', versions: { '1.0': 'Y35kzg4vQBQ' } },
+  { id: 'Act1-Scene14', act: 'Act 1', scene: 'Scene 14', title: 'The Arrest', versions: { '1.0': 'wg2brKqY6x0', '2.0': 'XZeok9OG-D0' } },
+  { id: 'Act1-Finale', act: 'Act 1', scene: 'Finale', title: 'Standard Procedure', versions: { '1.0': 'YBeARM-lNeo' } },
+  { id: 'Act2-Intro', act: 'Act 2', scene: 'Intro', title: 'Who Was That? (Part 3)', versions: { '1.0': 'YmZRKBgGhaw' } },
+  { id: 'Act2-Scene4', act: 'Act 2', scene: 'Scene 4', title: 'In Transit', versions: { '1.0': 'bdb6xQDCGZU', '2.0': '4VD1OXasPsI' } },
+  { id: 'Act2-Scene5', act: 'Act 2', scene: 'Scene 5', title: 'Witch Hunt & Snowstorm', versions: { '1.0': 'iJNhZs7p_2Y', '2.0': 'S_ai5KR5Gjg', '2.1': '1O7g--H0PCg' } },
+  { id: 'Act2-Scene8', act: 'Act 2', scene: 'Scene 8', title: 'What Did You Do', versions: { '1.0': '08OeZli8uf8' } },
+  { id: 'Act2-Scene9', act: 'Act 2', scene: 'Scene 9', title: 'Just Like Them Just Like Me', versions: { '1.0': 'wdesqA9Er9c' } },
+  { id: 'Act2-Scene11', act: 'Act 2', scene: 'Scene 11', title: 'Good for Us', versions: { '1.0': 'QqsgRN2zKkM' } },
+  { id: 'Act2-Scene12', act: 'Act 2', scene: 'Scene 12', title: 'I Need to Walk', versions: { '1.0': 'Jk3R5NF6eqs' } },
+  { id: 'Act2-Scene13', act: 'Act 2', scene: 'Scene 13', title: 'Not Unreasonable Man', versions: { '1.0': 'j1lVwTeycPQ', '1.5': 'jn5eWZ_CzZM' } },
+  { id: 'Act2-Scene14', act: 'Act 2', scene: 'Scene 14', title: 'We the People', versions: { '1.0': 'cSVe6MhYpC0' } },
+  { id: 'Act2-Scene15', act: 'Act 2', scene: 'Scene 15', title: 'A Reasonable Vice (President)', versions: { '2.0': 'GuEb_Erov3s' } },
+  { id: 'Act2-Finale', act: 'Act 2', scene: 'Finale', title: 'If You Only Knew', versions: { '1.0': 'dv-ZFkmz_Bk', '2.0': '8NaFydqCrDA', '2.0.2': 'UR5l3MQjw2o' } },
+];
+
+export const sunoTracks: SunoTrack[] = [
+  { id: 'BpXg1siK0Gk5VrXl', version: 'v1.0', act: 'Act 1', scene: 'Intro', title: 'Allegedly' },
+  { id: 'pgI8dQiFwApnxxaX', version: 'v1.0', act: 'Act 1', scene: 'Scene 1', title: 'Sweetheart Deal' },
+  { id: 'fEIPDMV1SUP1xAe5', version: 'v1.0', act: 'Act 1', scene: 'Scene 2', title: 'Who Was That - 1 (Preprise)' },
+  { id: 'uK9ghMGSfYgAKXdO', version: 'v1.0', act: 'Act 1', scene: 'Scene 3', title: 'They Were Only Boys' },
+  { id: 'uvUPVRMZEwHZ3xul', version: 'v2.1', act: 'Act 1', scene: 'Scene 3', title: 'They Were Only Boys' },
+  { id: 'ACLv76ZONDEEa3dR', version: 'v2.0', act: 'Act 1', scene: 'Scene 3', title: 'They Were Only Boys' },
+  { id: 'Nww4HkZosyvmRyf8', version: 'v1.0', act: 'Act 1', scene: 'Scene 4', title: 'Reasonable Man (Broadway Standard)' },
+  { id: 'RhZ3OAIIJk2IiK88', version: 'v1.5', act: 'Act 1', scene: 'Scene 4', title: 'Reasonable Man (Tarantella)' },
+  { id: 'vTgWsZSVDFQtS0tE', version: 'v1.0', act: 'Act 1', scene: 'Scene 5', title: 'Questions' },
+  { id: 'uLicnxYQQxWFYrEG', version: 'v1.0', act: 'Act 1', scene: 'Scene 6', title: 'Billion Here' },
+  { id: 's0VOzra9aQ3DCddb', version: 'v1.5', act: 'Act 1', scene: 'Scene 6', title: 'Billion Here' },
+  { id: 'TxyT0kjG6KpHyODM', version: 'v2.0', act: 'Act 1', scene: 'Scene 6', title: 'A Billion Here' },
+  { id: 'Fkd7yUx7X9qLu78D', version: 'v1.0', act: 'Act 1', scene: 'Scene 6', title: 'Little Secret' },
+  { id: 'SflPfMg5C2ALZyXk', version: 'v1.0', act: 'Act 1', scene: 'Scene 7', title: 'Welcome to Lil\'Elmo' },
+  { id: 'mRGl8dyZP1g64gej', version: 'v1.0', act: 'Act 1', scene: 'Scene 11', title: 'What Happened on That Island' },
+  { id: 'eVcmOgm8DZsl5kQa', version: 'v1.0', act: 'Act 1', scene: 'Scene 14', title: 'The Arrest' },
+  { id: 'niNLu3u8FpsWeHhF', version: 'v1.0', act: 'Act 1', scene: 'Finale', title: 'Standard Procedure' },
+  { id: 'AqNQgKhLvMTK6gkL', version: 'v1.0', act: 'Act 2', scene: 'Intro', title: 'Who Was That? - 3' },
+  { id: 'm119yIhdv7Hgl3JL', version: 'v2.0', act: 'Act 2', scene: 'Scene 4', title: 'In Transit' },
+  { id: 'uhzD8Udjzwu89KOV', version: 'v1.0', act: 'Act 2', scene: 'Scene 5', title: 'Snowstorm & a Witch Hunt' },
+  { id: 'eTmFxsTFifeHgvdd', version: 'v2.0', act: 'Act 2', scene: 'Scene 5', title: 'Witch Hunt in a Snow Storm' },
+  { id: 'PJHx1rVRWRlYSS28', version: 'v2.0', act: 'Act 2', scene: 'Scene 7', title: 'What Did You Do?' },
+  { id: 'Gu6VYg0IuvWf5Iq3', version: 'v1.0', act: 'Act 2', scene: 'Scene 8', title: 'What Did You Do' },
+  { id: '3GB5eAZiLDeV8oDJ', version: 'v1.0', act: 'Act 2', scene: 'Scene 9', title: 'Just Like' },
+  { id: 'Iwur092qzAdQGKfa', version: 'v1.0', act: 'Act 2', scene: 'Scene 11', title: 'Good For Us' },
+  { id: 'TQgI3U311Jj0ffrP', version: 'v1.0', act: 'Act 2', scene: 'Scene 12', title: 'I Need to Walk' },
+  { id: 'dWWqqLz3Ie5aPR7w', version: 'v1.0', act: 'Act 2', scene: 'Scene 14', title: 'We the People' },
+  { id: 'vUXOUgfpehjCXpe6', version: 'v2.0', act: 'Act 2', scene: 'Scene 15', title: 'A Reasonable Vice (President)' },
+  { id: 'pfaY6ZDN5Ynan4UJ', version: 'v1.0', act: 'Act 2', scene: 'Scene 17', title: 'If You Only Knew (Curtain Call)' },
+  { id: 'L9HH0p95YCl8rMYp', version: 'v2.0', act: 'Finale', scene: 'Scene 17', title: 'If You Only Knew (Curtain Call 1)' },
+  { id: 'Y04mCXJMMCuaSeho', version: 'v2.0', act: 'Finale', scene: 'Scene 17', title: 'If You Only Knew (Curtain Call 2)' },
+];
+
+export const tiktokTracks: TikTokTrack[] = [
+  { id: '7610458304506088734', version: 'v1.0', act: 'Act 1', scene: 'Intro', title: 'Allegedly' },
+  { id: '7610489795164294430', version: 'v1.0', act: 'Act 1', scene: 'Scene 1', title: 'Sweetheart Deal' },
+  { id: '7610796426947300638', version: 'v1.0', act: 'Act 1', scene: 'Scene 2', title: 'Who Was That (PrePrise 1)' },
+  { id: '7611546735864728863', version: 'v1.0', act: 'Act 1', scene: 'Scene 3', title: 'They Were Only Boys' },
+  { id: '7611547596141628702', version: 'v1.0', act: 'Act 1', scene: 'Scene 4', title: 'Reasonable Man' },
+  { id: '7618336201761656094', version: 'v1.0', act: 'Act 1', scene: 'Scene 5', title: 'Questions' },
+  { id: '7627596244491291918', version: 'v.1.0', act: 'Act 1', scene: 'Scene 7', title: 'Questions' },
+  { id: '7611549244725546271', version: 'v1.0', act: 'Act 1', scene: 'Scene 6', title: 'Little Secrets' },
+  { id: '7611548723696438558', version: 'v1.0', act: 'Act 1', scene: 'Scene 7', title: 'Welcome to Lil\'Elmo' },
+  { id: '7618817286924733726', version: 'v1.0', act: 'Act 1', scene: 'Scene 11', title: 'I know What Happened on That Island' },
+  { id: '7627336007343426830', version: 'v1.0', act: 'Act 1', scene: 'Scene 11', title: 'I Know What Happened on That Island' },
+  { id: '7618815685455678750', version: 'v1.0', act: 'Act 1', scene: 'Scene 14', title: 'The Arrest' },
+  { id: '7618319120685108510', version: 'v1.0', act: 'Act 1', scene: 'Finale', title: 'Standard Procedure' },
+  { id: '7618817621542194463', version: 'v1.0', act: 'Act 2', scene: 'Scene 5', title: 'Snowstorm & a Witch Hunt' },
+  { id: '7627503710586932494', version: 'v2.01', act: 'Act 2', scene: 'Scene 8', title: 'What Did You Do?' },
+  { id: '7627598501937024270', version: 'v1.5', act: 'Act 2', scene: 'Scene 13', title: 'We the People' },
+  { id: '7627427818896510221', version: 'v2.0', act: 'Act 2', scene: 'Finale', title: 'If You Only Knew' },
+  { id: '7622361670010096927', version: 'v.2.0.2', act: 'Finale', scene: 'Scene 17', title: 'If You Only Knew (Curtain Call 2)' },
+  { id: '7622361670010096927', version: 'v2.01', act: 'Act 2', scene: 'Finale', title: 'If You Only Knew' },
+];
+
+export const instagramTracks: InstagramTrack[] = [
+  { id: 'DW2wDCYiUpm', version: 'v2.01', act: 'Act 1', scene: 'Scene 3', title: 'Only Boys' },
+  { id: 'DWkSyiDjTzq', version: 'v1.0', act: 'Act 2', scene: 'Scene 11', title: 'Good For Us' },
+  { id: 'DXBC9kRDfDQ', version: 'v1.0', act: 'Act 2', scene: 'Scene 9', title: 'Just Like Them, Just Like Me' },
+];
