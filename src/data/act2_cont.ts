@@ -3,10 +3,11 @@ import { Scene } from '../types';
 export const act2ScenesCont: Scene[] = [
   { 
     id: "02-04", 
-    title: "The Transit Hub", 
+    title: "In Transit", 
     summary: "Gus sees news about the Goldstein documents at a transit hub and changes his plans.", 
     characters: "Gus, Commuter",
-    hasMusic: false,
+    hasMusic: true,
+    youtubeId: "bdb6xQDCGZU",
     script: [
       { type: 'stage-direction', text: "TRANSIT HUB — DAY" },
       { type: 'stage-direction', text: "A busy DC transit station. Boards, foot traffic, the specific noise of a place built for people going somewhere. GUS enters with a bag over one shoulder, moving with purpose. He checks the board. Finds his train. Starts toward it." },

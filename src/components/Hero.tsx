@@ -7,7 +7,53 @@ interface HeroProps {
 
 export function Hero({ onOpenModal }: HeroProps) {
   return (
-    <div className="flex flex-col items-center text-center mb-8">
+    <div className="flex flex-col items-center text-center mb-8 relative">
+      {/* Bauhaus-inspired Background Animation */}
+      <div className="absolute inset-0 -z-10 overflow-hidden pointer-events-none">
+        {/* Animated Gradient Shell */}
+        <motion.div 
+          className="absolute inset-0 opacity-15 mix-blend-multiply"
+          animate={{
+            background: [
+              'radial-gradient(circle at 10% 20%, var(--bauhaus-red) 0%, transparent 60%)',
+              'radial-gradient(circle at 90% 20%, var(--bauhaus-blue) 0%, transparent 60%)',
+              'radial-gradient(circle at 50% 90%, var(--bauhaus-yellow) 0%, transparent 60%)',
+              'radial-gradient(circle at 10% 20%, var(--bauhaus-red) 0%, transparent 60%)',
+            ]
+          }}
+          transition={{ duration: 30, repeat: Infinity, ease: "linear" }}
+          style={{ filter: "blur(100px)" }}
+        />
+
+        {/* Shifting Shapes */}
+        <motion.div
+          className="absolute top-1/4 -left-20 w-80 h-80 rounded-full bg-bauhaus-red/10 blur-[100px]"
+          animate={{
+            x: [0, 150, 0],
+            y: [0, 80, 0],
+            scale: [1, 1.4, 1],
+          }}
+          transition={{ duration: 25, repeat: Infinity, ease: "easeInOut" }}
+        />
+        <motion.div
+          className="absolute bottom-1/4 -right-20 w-[400px] h-[400px] rounded-full bg-bauhaus-blue/10 blur-[120px]"
+          animate={{
+            x: [0, -180, 0],
+            y: [0, -100, 0],
+            scale: [1, 1.2, 1],
+          }}
+          transition={{ duration: 30, repeat: Infinity, ease: "easeInOut", delay: 5 }}
+        />
+        
+        <div 
+          className="absolute inset-0 opacity-[0.03]" 
+          style={{ 
+            backgroundImage: 'linear-gradient(var(--bauhaus-black) 1px, transparent 1px), linear-gradient(90deg, var(--bauhaus-black) 1px, transparent 1px)', 
+            backgroundSize: '60px 60px' 
+          }} 
+        />
+      </div>
+
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
