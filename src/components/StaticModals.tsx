@@ -1,7 +1,18 @@
-import React, { useState } from 'react';
-import { Mail, ChevronDown, ChevronUp, FileText } from 'lucide-react';
+import React, { useState, useEffect } from 'react';
+import { Mail, ChevronDown, ChevronUp, FileText, RotateCcw } from 'lucide-react';
 import { Modal, BauhausButton } from './BauhausUI';
 import { blogPosts } from '../data/blog';
+
+const PHOTO_FILENAMES = [
+  "images/photo1.jpg", 
+  "images/photo2.jpg", 
+  "images/photo3.jpg", 
+  "images/photo4.jpg", 
+  "images/photo5.jpg", 
+  "images/photo6.jpg", 
+  "images/photo7.jpg", 
+  "images/photo8.jpg"
+];
 
 interface StaticModalsProps {
   activeModal: string | null;
@@ -11,6 +22,18 @@ interface StaticModalsProps {
 
 export function StaticModals({ activeModal, onClose, onOpenModal }: StaticModalsProps) {
   const [expandedSections, setExpandedSections] = useState<Record<string, boolean>>({});
+  const [displayedPhotos, setDisplayedPhotos] = useState<string[]>([]);
+
+  const shufflePhotos = () => {
+    const shuffled = [...PHOTO_FILENAMES].sort(() => 0.5 - Math.random());
+    setDisplayedPhotos(shuffled.slice(0, 4));
+  };
+
+  useEffect(() => {
+    if (activeModal === 'bts') {
+      shufflePhotos();
+    }
+  }, [activeModal]);
 
   const toggleSection = (id: string) => {
     setExpandedSections(prev => ({ ...prev, [id]: !prev[id] }));
@@ -112,26 +135,39 @@ export function StaticModals({ activeModal, onClose, onOpenModal }: StaticModals
           {/* Statistics Table */}
           <section className="mt-4">
             <div className="border-4 border-bauhaus-black overflow-hidden bg-bauhaus-white shadow-[8px_8px_0px_0px_rgba(230,57,70,1)]">
-              <table className="w-full text-center border-collapse">
+              <table className="w-full border-collapse">
                 <thead>
-                  <tr className="bg-bauhaus-black text-bauhaus-white font-display font-black text-[10px] md:text-sm">
-                    <th className="p-2 md:p-4 border-r-2 border-bauhaus-white/20 whitespace-nowrap">WORDS</th>
-                    <th className="p-2 md:p-4 border-r-2 border-bauhaus-white/20 whitespace-nowrap">SENTENCES</th>
-                    <th className="p-2 md:p-4 border-r-2 border-bauhaus-white/20 whitespace-nowrap uppercase">Dialogue Turns</th>
-                    <th className="p-2 md:p-4 border-r-2 border-bauhaus-white/20 whitespace-nowrap">TIME</th>
-                    <th className="p-2 md:p-4 whitespace-nowrap">MUSIC GENS</th>
+                  <tr className="bg-bauhaus-black text-bauhaus-white font-display font-black text-sm uppercase">
+                    <th className="p-4 border-r-2 border-bauhaus-white/20 text-left">Metric</th>
+                    <th className="p-4 text-right">Value</th>
                   </tr>
                 </thead>
-                <tbody>
-                  <tr className="font-display font-black text-2xl md:text-5xl lg:text-6xl text-bauhaus-red bg-white">
-                    <td className="p-4 md:p-6 border-r-4 border-bauhaus-black">295,000</td>
-                    <td className="p-4 md:p-6 border-r-4 border-bauhaus-black">33,500</td>
-                    <td className="p-4 md:p-6 border-r-4 border-bauhaus-black">280</td>
-                    <td className="p-4 md:p-6 border-r-4 border-bauhaus-black text-[10px] md:text-2xl leading-none">1460<br/><span className="text-[8px] md:text-xs">MINUTES</span></td>
-                    <td className="p-4 md:p-6 italic">677</td>
-                  </tr>
+                <tbody className="font-display font-black uppercase text-sm md:text-base lg:text-xl">
+                  {[
+                    { label: 'Words', value: '298,896' },
+                    { label: 'Sentences', value: '35,021' },
+                    { label: 'Dialogue Turns', value: '759', note: 'Not including Firebase and Claude Chrome extension' },
+                    { label: 'Exchanges (incl. missing)', value: 'EST. OVER 10,000' },
+                    { label: 'Total Planned Songs', value: '24 — V1.0 COMPLETED' },
+                    { label: 'Active Processing Time', value: '1,495 MIN' },
+                    { label: 'Highest Retention Rate (YT)', value: '60%' },
+                    { label: 'Flesch-Kincaid', value: '5.9', note: 'equivalent to Chicago' },
+                    { label: 'Highest Musical Regenerations', value: 'OVER 180', note: '"What Did You Do"' },
+                  ].map((stat, idx) => (
+                    <tr key={idx} className="border-b-2 border-bauhaus-black hover:bg-bauhaus-yellow/10 transition-colors">
+                      <td className="p-4 border-r-2 border-bauhaus-black text-bauhaus-blue">
+                        {stat.label}
+                        {stat.note && (
+                          <span className="block text-[8px] md:text-[10px] font-sans font-bold text-bauhaus-black opacity-50 lowercase tracking-normal">
+                            ({stat.note})
+                          </span>
+                        )}
+                      </td>
+                      <td className="p-4 text-right text-bauhaus-red">{stat.value}</td>
+                    </tr>
+                  ))}
                   <tr className="bg-bauhaus-yellow">
-                    <td colSpan={5} className="p-3 md:p-4 text-[8px] md:text-[10px] font-sans font-bold border-t-4 border-bauhaus-black text-left leading-tight uppercase">
+                    <td colSpan={2} className="p-3 md:p-4 text-[8px] md:text-[10px] font-sans font-bold text-left leading-tight uppercase">
                       ALL NUMBERS ARE APPROXIMATE AND DO NOT INCLUDE TIME OR TURNS WORKING IN FIREBASE/AI STUDIO CONSTRUCTING THE WEBSITE, NORE DOES IT INCLUDE TIME SPENT ACTUALLY WORKING ON NOTEBOOKLM, NOTION AI, OR SUNOAI. ONLY CONVERSATIONAL TURNS ARE AGGREGATED. DATA IS UPDATED AS OF 19 APRIL 2026.
                     </td>
                   </tr>
@@ -205,7 +241,7 @@ export function StaticModals({ activeModal, onClose, onOpenModal }: StaticModals
           </section>
 
           {/* BTS Meta Info */}
-          <section className="space-y-12 mt-16 pt-12 border-t-8 border-bauhaus-black">
+          <section className="space-y-12 mt-16 pt-12 border-t-8 border-bauhaus-black pb-8">
             <div className="space-y-8">
               <div className="flex justify-between items-end border-b-4 border-bauhaus-black pb-4">
                 <h3 className="text-3xl font-display font-black uppercase bg-bauhaus-yellow inline-block px-4">Concept Gallery</h3>
@@ -225,6 +261,34 @@ export function StaticModals({ activeModal, onClose, onOpenModal }: StaticModals
                       referrerPolicy="no-referrer"
                     />
                     <div className="absolute inset-0 bg-bauhaus-red/20 opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none" />
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Photo Strip */}
+            <div className="space-y-6 pt-12 border-t-4 border-bauhaus-black/10">
+              <div className="flex justify-between items-center">
+                <h4 className="font-display font-black text-lg uppercase tracking-tighter text-bauhaus-black">
+                  CONCEPT IMAGES — <span className="text-bauhaus-red italic">COMING SOON</span>
+                </h4>
+                <button 
+                  onClick={shufflePhotos}
+                  className="flex items-center gap-2 bg-bauhaus-black text-bauhaus-white px-3 py-1.5 font-display font-black text-[10px] uppercase tracking-widest hover:bg-bauhaus-red transition-colors"
+                >
+                  <RotateCcw size={12} />
+                  Shuffle
+                </button>
+              </div>
+              <div className="grid grid-cols-4 gap-4">
+                {displayedPhotos.map((photo, idx) => (
+                  <div key={idx} className="aspect-square border-2 border-bauhaus-black overflow-hidden bg-bauhaus-white">
+                    <img 
+                      src={`/${photo}`} 
+                      alt={`BTS Concept ${idx + 1}`}
+                      className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-500"
+                      referrerPolicy="no-referrer"
+                    />
                   </div>
                 ))}
               </div>
