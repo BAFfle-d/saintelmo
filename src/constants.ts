@@ -104,8 +104,8 @@ export const charities: Charity[] = [
 ];
 
 export const youtubeTracks: Track[] = [
-  { id: 'Act1-Intro', act: 'Act 1', scene: 'Intro', title: 'Allegedly', versions: { '1.0': 'ETAIIfgJZKY' } },
-  { id: 'Act1-Scene1', act: 'Act 1', scene: 'Scene 1', title: 'Sweetheart Deal', versions: { '1.0': 'ysue5dEzxjl' } },
+  { id: 'Act1-Intro', act: 'Act 1', scene: 'Intro', title: 'Allegedly', versions: { '1.0': 'ETAlIfgJZKY' } },
+  { id: 'Act1-Scene1', act: 'Act 1', scene: 'Scene 1', title: 'Sweetheart Deal', versions: { '1.0': 'ysue5dEzxjI' } },
   { id: 'Act1-Scene2', act: 'Act 1', scene: 'Scene 2', title: 'Who Was That (PrePrise 1)', versions: { '1.0': '_lhwSoj4ilk' } },
   { id: 'Act1-Scene3', act: 'Act 1', scene: 'Scene 3', title: 'Only Boys', versions: { '1.0': 'Ktey6JsAyP4' } },
   { id: 'Act1-Scene4', act: 'Act 1', scene: 'Scene 4', title: 'Reasonable Man', versions: { '1.0': 'Qg-SA255BA4' } },
@@ -118,6 +118,7 @@ export const youtubeTracks: Track[] = [
   { id: 'Act1-Scene13', act: 'Act 1', scene: 'Scene 13', title: 'Waltz of Inevitability', versions: { '1.0': 'XZeok9OG-D0' } },
   { id: 'Act1-Scene14', act: 'Act 1', scene: 'Scene 14', title: 'Standard Procedure', versions: { '1.0': 'YBeARM-lNeo' } },
   { id: 'Act2-Intro', act: 'Act 2', scene: 'Intro', title: 'Who Was That? (Part 3)', versions: { '1.0': 'YmZRKBgGhaw' } },
+  { id: 'Act2-Intro-Alt', act: 'Act 2', scene: 'Intro (Alt)', title: 'Alternate Intro', versions: { '1.0': 'bt9ho1q-ppE' } },
   { id: 'Act2-Scene4', act: 'Act 2', scene: 'Scene 4', title: 'In Transit', versions: { '1.0': 'bdb6xQDCGZU' } },
   { id: 'Act2-Scene5', act: 'Act 2', scene: 'Scene 5', title: 'Witch Hunt & Snowstorm', versions: { '1.0': 'iJNhZs7p_2Y', '2.0': 'S_ai5KR5Gjg', '2.1': '1O7g--H0PCg' } },
   { id: 'Act2-Scene8', act: 'Act 2', scene: 'Scene 8', title: 'What Did You Do', versions: { '1.0': '08OeZli8uf8' } },

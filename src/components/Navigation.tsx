@@ -7,8 +7,7 @@ interface NavigationProps {
 export function Navigation({ onOpenModal }: NavigationProps) {
   const navItems = [
     { id: 'characters', label: 'Characters', icon: <Heart size={18} /> },
-    { id: 'bts', label: 'Behind the Scenes (TBA)', icon: <Video size={18} /> },
-    { id: 'blog', label: 'Blog (TBA)', icon: <StickyNote size={18} /> },
+    { id: 'bts', label: 'Behind the Scenes', icon: <Video size={18} /> },
     { id: 'notes', label: 'Notes', icon: <StickyNote size={18} /> },
     { id: 'about', label: 'About', icon: <Info size={18} /> },
     { id: 'contact', label: 'Contact', icon: <Mail size={18} /> },
@@ -25,12 +24,9 @@ export function Navigation({ onOpenModal }: NavigationProps) {
             <button
               key={item.id}
               onClick={() => {
-                if (item.id === 'bts' || item.id === 'blog') return;
                 onOpenModal(item.id);
               }}
-              className={`flex items-center gap-2 font-display font-black uppercase text-[10px] tracking-[0.2em] transition-colors ${
-                (item.id === 'bts' || item.id === 'blog') ? 'opacity-30 cursor-not-allowed' : 'hover:text-bauhaus-red'
-              }`}
+              className="flex items-center gap-2 font-display font-black uppercase text-[10px] tracking-[0.2em] transition-colors hover:text-bauhaus-red"
             >
               {item.icon}
               <span className="hidden lg:inline">{item.label}</span>

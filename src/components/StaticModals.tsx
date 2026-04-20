@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
-import { Mail, ChevronDown, ChevronUp } from 'lucide-react';
+import { Mail, ChevronDown, ChevronUp, FileText } from 'lucide-react';
 import { Modal, BauhausButton } from './BauhausUI';
+import { blogPosts } from '../data/blog';
 
 interface StaticModalsProps {
   activeModal: string | null;
@@ -107,37 +108,126 @@ export function StaticModals({ activeModal, onClose, onOpenModal }: StaticModals
       </Modal>
 
       <Modal isOpen={activeModal === 'bts'} onClose={onClose} title="BEHIND THE SCENES">
-        <div className="space-y-12 text-bauhaus-black">
-          <section>
-            <h3 className="text-2xl font-display font-black uppercase mb-6 bg-bauhaus-yellow inline-block px-2">Concept Art</h3>
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-              {[1, 2, 3, 4].map(i => (
-                <div key={i} className="aspect-video bg-bauhaus-black border-2 border-bauhaus-black relative overflow-hidden group">
-                  <img 
-                    src={`https://picsum.photos/seed/bts-${i}/400/300`} 
-                    alt={`Concept ${i}`} 
-                    className="w-full h-full object-cover opacity-60 group-hover:opacity-100 transition-opacity"
-                    referrerPolicy="no-referrer"
-                  />
+        <div className="space-y-12 text-bauhaus-black max-h-[75vh] overflow-y-auto pr-4 custom-scrollbar">
+          {/* Statistics Table */}
+          <section className="mt-4">
+            <div className="border-4 border-bauhaus-black overflow-hidden bg-bauhaus-white shadow-[8px_8px_0px_0px_rgba(230,57,70,1)]">
+              <table className="w-full text-center border-collapse">
+                <thead>
+                  <tr className="bg-bauhaus-black text-bauhaus-white font-display font-black text-[10px] md:text-sm">
+                    <th className="p-2 md:p-4 border-r-2 border-bauhaus-white/20 whitespace-nowrap">WORDS</th>
+                    <th className="p-2 md:p-4 border-r-2 border-bauhaus-white/20 whitespace-nowrap">SENTENCES</th>
+                    <th className="p-2 md:p-4 border-r-2 border-bauhaus-white/20 whitespace-nowrap uppercase">Dialogue Turns</th>
+                    <th className="p-2 md:p-4 border-r-2 border-bauhaus-white/20 whitespace-nowrap">TIME</th>
+                    <th className="p-2 md:p-4 whitespace-nowrap">MUSIC GENS</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr className="font-display font-black text-2xl md:text-5xl lg:text-6xl text-bauhaus-red bg-white">
+                    <td className="p-4 md:p-6 border-r-4 border-bauhaus-black">295,000</td>
+                    <td className="p-4 md:p-6 border-r-4 border-bauhaus-black">33,500</td>
+                    <td className="p-4 md:p-6 border-r-4 border-bauhaus-black">280</td>
+                    <td className="p-4 md:p-6 border-r-4 border-bauhaus-black text-[10px] md:text-2xl leading-none">1460<br/><span className="text-[8px] md:text-xs">MINUTES</span></td>
+                    <td className="p-4 md:p-6 italic">677</td>
+                  </tr>
+                  <tr className="bg-bauhaus-yellow">
+                    <td colSpan={5} className="p-3 md:p-4 text-[8px] md:text-[10px] font-sans font-bold border-t-4 border-bauhaus-black text-left leading-tight uppercase">
+                      ALL NUMBERS ARE APPROXIMATE AND DO NOT INCLUDE TIME OR TURNS WORKING IN FIREBASE/AI STUDIO CONSTRUCTING THE WEBSITE, NORE DOES IT INCLUDE TIME SPENT ACTUALLY WORKING ON NOTEBOOKLM, NOTION AI, OR SUNOAI. ONLY CONVERSATIONAL TURNS ARE AGGREGATED. DATA IS UPDATED AS OF 19 APRIL 2026.
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </section>
+
+          {/* Blog Section */}
+          <section className="space-y-8 mt-12 pt-8 border-t-4 border-bauhaus-black/10">
+            <div className="flex items-center gap-4 mb-8">
+              <h3 className="text-3xl font-display font-black uppercase bg-bauhaus-blue text-bauhaus-white inline-block px-4 py-1">LATEST BLOG</h3>
+              <div className="h-1 flex-grow bg-bauhaus-blue" />
+            </div>
+
+            {/* Most Recent Blog Post */}
+            {blogPosts.length > 0 && (
+              <div className="border-4 border-bauhaus-black p-8 bg-bauhaus-white relative">
+                <div className="absolute -top-4 -right-4 bg-bauhaus-red text-bauhaus-white px-4 py-2 font-display font-black text-sm uppercase tracking-widest shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]">
+                  {blogPosts[0].date}
                 </div>
-              ))}
+                <h2 className="text-2xl md:text-5xl font-display font-black uppercase mb-8 leading-tight text-bauhaus-black pr-24 underline decoration-bauhaus-red decoration-8 underline-offset-8">
+                  {blogPosts[0].title}
+                </h2>
+                <div className="prose prose-bauhaus max-w-none font-sans text-xl leading-relaxed whitespace-pre-wrap border-l-8 border-bauhaus-blue pl-8">
+                  {blogPosts[0].content.split('###').map((part, i) => {
+                    if (i === 0) return part;
+                    const lines = part.split('\n');
+                    const header = lines[0];
+                    const rest = lines.slice(1).join('\n');
+                    return (
+                      <React.Fragment key={i}>
+                        <span className="bg-bauhaus-yellow px-2 font-display font-black text-2xl uppercase inline-block my-4">
+                          {header}
+                        </span>
+                        {rest}
+                      </React.Fragment>
+                    );
+                  })}
+                </div>
+              </div>
+            )}
+
+            {/* Combined Filler Archive */}
+            <div className="mt-16">
+              <AccordionSection
+                title="FILLER MATERIAL PRE-BLOG"
+                isOpen={expandedSections['blog-filler']}
+                onToggle={() => {
+                  setExpandedSections(prev => ({
+                    ...prev,
+                    'blog-filler': !prev['blog-filler']
+                  }));
+                }}
+              >
+                <div className="space-y-12">
+                  {blogPosts.slice(1).map((post) => (
+                    <div key={post.id} className="border-b-2 border-bauhaus-black/10 pb-8 last:border-0 last:pb-0">
+                      <div className="flex justify-between items-center mb-4">
+                        <h5 className="font-display font-black uppercase text-bauhaus-blue">{post.title}</h5>
+                        <span className="text-xs uppercase font-bold opacity-50">{post.date}</span>
+                      </div>
+                      <div className="font-sans text-sm leading-relaxed whitespace-pre-wrap opacity-70">
+                        {post.content}
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </AccordionSection>
             </div>
           </section>
-          <section>
-            <h3 className="text-2xl font-display font-black uppercase mb-6 bg-bauhaus-red text-bauhaus-white inline-block px-2">Script Excerpts</h3>
-            <div className="p-8 border-4 border-bauhaus-black bg-bauhaus-white font-mono text-sm space-y-4">
-              <p className="font-bold">GEOFF</p>
-              <p className="pl-8 italic">Something will happen. It always does. The universe abhors a vacuum, and it especially abhors a billionaire with nothing to do.</p>
-              <p className="font-bold">MAXIE</p>
-              <p className="pl-8">The universe doesn't care about your vacuum, Geoff. The Department of Justice does.</p>
-            </div>
-          </section>
-          <section>
-            <h3 className="text-2xl font-display font-black uppercase mb-6 bg-bauhaus-blue text-bauhaus-white inline-block px-2">Composer Notes</h3>
-            <div className="p-8 border-4 border-bauhaus-black bg-bauhaus-yellow/20">
-              <p className="font-sans leading-relaxed italic">
-                "The score should feel like a collision between 1920s cabaret and modern electronic tension. Use sharp, geometric rhythms to mirror the Bauhaus aesthetic. The 'Island Theme' needs to sound both inviting and deeply unsettling—a siren song with a jagged edge."
-              </p>
+
+          {/* BTS Meta Info */}
+          <section className="space-y-12 mt-16 pt-12 border-t-8 border-bauhaus-black">
+            <div className="space-y-8">
+              <div className="flex justify-between items-end border-b-4 border-bauhaus-black pb-4">
+                <h3 className="text-3xl font-display font-black uppercase bg-bauhaus-yellow inline-block px-4">Concept Gallery</h3>
+                <span className="font-display font-black text-bauhaus-red animate-pulse uppercase tracking-widest text-lg">COMING SOON</span>
+              </div>
+              <div className="grid grid-cols-2 md:grid-cols-5 gap-4">
+                {[
+                  'blue-office', 'bauhaus-island', 'police-bauhaus', 
+                  'man-chair-blue', 'man-desk-vibrant', 'man-box',
+                  'judge-harlequin', 'green-suit-man', 'purple-dress-woman', 'marching-band'
+                ].map((seed, i) => (
+                  <div key={i} className="aspect-[2/3] bg-bauhaus-black border-4 border-bauhaus-black relative overflow-hidden group">
+                    <img 
+                      src={`https://picsum.photos/seed/${seed}/600/900`} 
+                      alt={`Concept ${i}`} 
+                      className="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-all group-hover:scale-105 filter grayscale hover:grayscale-0"
+                      referrerPolicy="no-referrer"
+                    />
+                    <div className="absolute inset-0 bg-bauhaus-red/20 opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none" />
+                  </div>
+                ))}
+              </div>
             </div>
           </section>
         </div>
@@ -226,12 +316,11 @@ export function StaticModals({ activeModal, onClose, onOpenModal }: StaticModals
             </div>
             <div className="pt-8 border-t-4 border-bauhaus-black/10">
               <BauhausButton 
-                onClick={() => {}}
+                onClick={() => onOpenModal('bts')}
                 variant="yellow"
-                className="w-full py-6 !text-2xl opacity-30 cursor-not-allowed"
-                disabled
+                className="w-full py-6 !text-2xl"
               >
-                Behind the Scenes (TBA)
+                Behind the Scenes
               </BauhausButton>
             </div>
             <p>Through darkly comic musical numbers, sharp dialogue, and a cast of characters ranging from predators to survivors, <strong> Geoff & Maxie</strong> explores how "standard procedure" protects the powerful while punishing the vulnerable, how documentation becomes weaponized, and whether redemption is possible for those who've chosen silence over truth.</p>
@@ -454,7 +543,7 @@ function CreditItem({ role, description }: { role: string, description: string }
   );
 }
 
-function AccordionSection({ title, isOpen, onToggle, children }: { title: string, isOpen: boolean, onToggle: () => void, children: React.ReactNode }) {
+function AccordionSection({ title, isOpen, onToggle, children }: { title: string, isOpen: boolean, onToggle: () => void, children: React.ReactNode, key?: string | number }) {
   return (
     <div className="border-4 border-bauhaus-black bg-bauhaus-white">
       <button 

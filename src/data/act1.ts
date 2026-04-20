@@ -7,7 +7,7 @@ export const act1Scenes: Scene[] = [
     summary: "The opening number establishing the media circus and the 'alleged' nature of the crimes.", 
     characters: "Reporters, Geoff, Maxie, Ensemble",
     hasMusic: true,
-    youtubeId: "ETAIIfgJZKY",
+    youtubeId: "ETAlIfgJZKY",
     lyric: "ALLEGEDLY! ALLEGEDLY!\nWe must use the word 'allegedly' until the final gavel falls.\nGeoffrey Aaron Goldstein. Convicted. Continental. Charismatic.\nThe world is a stage, and I've simply bought the best seats.",
     script: [
       { type: 'musical-number', speaker: `SONG`, text: `[ALLEGEDLY - Full cast number]` }
@@ -19,7 +19,7 @@ export const act1Scenes: Scene[] = [
     summary: "Convicted criminal Geoff Goldstein finalizes a cushy work-release deal, maintaining his charm despite house arrest. As his partner Maxie protects their empire, Geoff faces isolation. The song 'Sweetheart Deal' contrasts his privilege with harsher justice, introducing themes of love, power, and protection.",
     characters: "Geoff, Maxie, Buck Jr, Stacey, Officer Watson",
     hasMusic: true,
-    youtubeId: "ysue5dEzxjl",
+    youtubeId: "ysue5dEzxjI",
     script: [
       { type: 'dialogue', speaker: `BUCK JR.`, text: `We pushed as far as we could. You're well above the curve on this.` },
       { type: 'dialogue', speaker: `GEOFF`, text: `This feels... transactional.` },

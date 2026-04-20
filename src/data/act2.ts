@@ -14,6 +14,17 @@ export const act2Scenes: Scene[] = [
     ]
   },
   { 
+    id: "02-01-Alt", 
+    title: "Alternate Intro (Who Was That?)", 
+    summary: "An alternative perspective on the Act 2 opener, exploring different emotional resonances of the fallout of the island crimes.", 
+    characters: "Maxie, Tammy, Ensemble",
+    hasMusic: true,
+    youtubeId: "bt9ho1q-ppE",
+    script: [
+      { type: 'musical-number', speaker: `SONG`, text: `[ALTERNATE WHO WAS THAT - Act 2 Opener]` }
+    ]
+  },
+  { 
     id: "02-02", 
     title: "The Bar", 
     summary: "Gus visits a quiet bar and sees Ginnie on the news, prompting a realization.", 
